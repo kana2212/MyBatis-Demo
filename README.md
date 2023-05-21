@@ -10,10 +10,11 @@ GETリクエストで以下のリクエストを返す
 | 3  | suzuki        | 16 |  
 ## 出力結果  
 全項目取得  
- https://user-images.githubusercontent.com/121325913/239719677-ecf22a58-f6b2-4dc5-8f17-43db9ab0254a.png  
+![スクリーンショット (79)](https://github.com/kana2212/MyBatis-Demo/assets/121325913/6b609728-700b-4474-b91d-f0034d5ab984)
   
 名前のみ全取得  
-https://user-images.githubusercontent.com/121325913/239719680-c9e6f977-2059-4df2-b798-70032f13cde2.png  
+![スクリーンショット (80)](https://github.com/kana2212/MyBatis-Demo/assets/121325913/e988ff0f-82c4-4d62-94fe-b588a9ec24f3)
   
 年齢を指定して取得  
-https://user-images.githubusercontent.com/121325913/239719686-25c22420-a48b-4439-99d7-d268db432e35.png
+![スクリーンショット (81)](https://github.com/kana2212/MyBatis-Demo/assets/121325913/19e283cb-bea0-458d-800b-0a7e182341fe)
+
