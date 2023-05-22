@@ -6,6 +6,6 @@ public interface MemberService {
     List<Member> findAll();
 
     List<String> findAllName();
-    
-    List<Member> findOverAge(String age);
+
+    List<Member> findAllAge();
 }

@@ -14,5 +14,5 @@ public interface MemberMapper {
     List<String> findAllName();
 
     @Select("SELECT * FROM members WHERE age >= #{age}")
-    List<Member> findOverAge(String age);
+    List<Member> findALlAge();
 }

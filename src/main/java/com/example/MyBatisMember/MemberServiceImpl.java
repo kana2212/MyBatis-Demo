@@ -23,14 +23,7 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public List<Member> findOverAge(String age) {
-        return memberMapper.findOverAge(age);
+    public List<Member> findAllAge() {
+        return memberMapper.findAll();
     }
 }
-
-
-
-
-
-
-
