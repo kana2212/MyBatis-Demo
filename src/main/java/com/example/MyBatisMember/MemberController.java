@@ -1,6 +1,7 @@
 package com.example.MyBatisMember;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -25,8 +26,10 @@ public class MemberController {
         return memberService.findAllName();
     }
 
-    @GetMapping("/ages")
-    public List<Member> getAges() {
-        return memberService.findAll();
+    @GetMapping("members/{minAge}")
+    public MemberResponse getFindByAgeMoreThan(@RequestParam("minAge") int age) {
+
+        return new MemberResponse();
+
     }
 }

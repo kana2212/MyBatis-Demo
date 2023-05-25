@@ -3,6 +3,7 @@ package com.example.MyBatisMember;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class MemberServiceImpl implements MemberService {
@@ -23,7 +24,12 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public List<Member> findAllAge() {
-        return memberMapper.findAll();
+    public List<Member> findByAgeMoreThan(int age) {
+        List<Member> members = memberMapper.findByAgeMoreThan(age);
+        if (Objects.isNull(members) || members.isEmpty()) {
+            return memberMapper.findAll();
+        } else {
+            return members;
+        }
     }
 }

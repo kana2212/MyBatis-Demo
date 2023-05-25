@@ -7,6 +7,7 @@ import java.util.List;
 
 @Mapper
 public interface MemberMapper {
+
     @Select("SELECT * FROM members")
     List<Member> findAll();
 
@@ -14,5 +15,5 @@ public interface MemberMapper {
     List<String> findAllName();
 
     @Select("SELECT * FROM members WHERE age >= #{age}")
-    List<Member> findALlAge();
+    List<Member> findByAgeMoreThan(int age);
 }

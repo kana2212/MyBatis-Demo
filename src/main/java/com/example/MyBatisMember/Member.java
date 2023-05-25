@@ -1,7 +1,9 @@
 package com.example.MyBatisMember;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+@AllArgsConstructor
 @Getter
 public class Member {
 
@@ -9,4 +11,5 @@ public class Member {
 
     private String name;
     private int age;
+
 }
