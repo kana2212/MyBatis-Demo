@@ -28,9 +28,6 @@ public class MemberController {
 
     @GetMapping("members/{minAge}")
     public MemberResponse getFindByAgeMoreThan(@RequestParam("minAge") int age) {
-        MemberResponse memberResponse = new MemberResponse();
-        memberResponse.setAgeMoreThan(age);
-        return memberResponse;
-
+        return new MemberResponse(age);
     }
 }
