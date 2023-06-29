@@ -1,12 +1,13 @@
 package com.example.MyBatisMember;
 
+import com.example.MyBatisMember.entity.Member;
+import com.example.MyBatisMember.entity.MemberForm;
+
 import java.util.List;
+
 
 public interface MemberService {
     List<Member> findAll();
 
-    List<String> findAllName();
-
-    List<Member> findByAgeMoreThan(int age);
-
+    void createMember(MemberForm form);
 }

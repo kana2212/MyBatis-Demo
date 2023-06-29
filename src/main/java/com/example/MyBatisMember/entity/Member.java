@@ -1,5 +1,6 @@
-package com.example.MyBatisMember;
+package com.example.MyBatisMember.entity;
 
+import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -8,7 +9,8 @@ import lombok.Getter;
 public class Member {
 
     private int id;
-
+    @NotEmpty
     private String name;
+    private String age;
 
 }

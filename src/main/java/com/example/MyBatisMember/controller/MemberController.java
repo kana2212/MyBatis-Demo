@@ -1,0 +1,41 @@
+package com.example.MyBatisMember.controller;
+
+import com.example.MyBatisMember.MemberService;
+import com.example.MyBatisMember.entity.Member;
+import com.example.MyBatisMember.entity.MemberForm;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.util.UriComponentsBuilder;
+
+import java.net.URI;
+import java.util.List;
+
+@RestController
+public class MemberController {
+
+    private final MemberService memberService;
+
+    public MemberController(MemberService memberService) {
+
+        this.memberService = memberService;
+    }
+
+    @GetMapping("/members")
+    public List<Member> getMembers() {
+        return memberService.findAll();
+    }
+
+    @PostMapping("/members")
+    public ResponseEntity<String> create(@RequestBody MemberForm form) {
+        memberService.createMember(form);
+        URI url = UriComponentsBuilder.fromUriString("http://localhost:8080")
+                .path("/members/{id}")
+                .build()
+                .toUri();
+        return ResponseEntity.created(url).body("successfully created");
+    }
+
+}

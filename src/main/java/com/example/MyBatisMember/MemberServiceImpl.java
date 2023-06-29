@@ -1,14 +1,18 @@
 package com.example.MyBatisMember;
 
+import com.example.MyBatisMember.entity.Member;
+import com.example.MyBatisMember.entity.MemberForm;
+import com.example.MyBatisMember.mapper.MemberMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Objects;
 
 @Service
 public class MemberServiceImpl implements MemberService {
     private final MemberMapper memberMapper;
 
+    @Autowired
     public MemberServiceImpl(MemberMapper memberMapper) {
         this.memberMapper = memberMapper;
     }
@@ -19,17 +23,7 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public List<String> findAllName() {
-        return memberMapper.findAllName();
-    }
-
-    @Override
-    public List<Member> findByAgeMoreThan(int age) {
-        List<Member> members = memberMapper.findByAgeMoreThan(age);
-        if (Objects.isNull(members) || members.isEmpty()) {
-            return memberMapper.findAll();
-        } else {
-            return members;
-        }
+    public void createMember(MemberForm form) {
+        memberMapper.createMember(form);
     }
 }
