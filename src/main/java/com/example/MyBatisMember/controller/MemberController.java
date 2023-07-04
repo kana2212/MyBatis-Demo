@@ -13,6 +13,8 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Map;
+
 
 @RestController
 public class MemberController {
@@ -35,13 +37,13 @@ public class MemberController {
     }
 
     @PostMapping("/members")
-    public ResponseEntity<String> create(@RequestBody MemberForm form) {
+    public ResponseEntity<Map<String, String>> create(@RequestBody MemberForm form) {
         memberService.createMember(form);
         URI url = UriComponentsBuilder.fromUriString("http://localhost:8080")
-                .path("/members/{id}")
+                .path("/members/" + form.getId())
                 .build()
                 .toUri();
-        return ResponseEntity.created(url).body("successfully created");
+        return ResponseEntity.created(url).body(Map.of("message", "successfully created"));
     }
 
 }
