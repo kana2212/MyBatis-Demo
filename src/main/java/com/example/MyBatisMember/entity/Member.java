@@ -11,6 +11,6 @@ public class Member {
     private int id;
     @NotEmpty
     private String name;
-    private String age;
+    private int age;
 
 }
