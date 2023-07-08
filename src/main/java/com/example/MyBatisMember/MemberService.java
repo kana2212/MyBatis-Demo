@@ -13,7 +13,7 @@ public interface MemberService {
 
     void createMember(MemberForm form);
 
-    Member updateMember(int id, String name);
+    Member updateMember(int id, String name, int age);
 
     Member deleteMember(int id);
 

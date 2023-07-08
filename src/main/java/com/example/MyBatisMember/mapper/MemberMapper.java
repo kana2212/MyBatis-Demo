@@ -25,8 +25,8 @@ public interface MemberMapper {
     @Options(useGeneratedKeys = true, keyProperty = "id")
     void createMember(MemberForm form);
 
-    @Update("UPDATE members SET name = #{name} WHERE id = #{id}")
-    void updateMemberById(int id, String name);
+    @Update("UPDATE members SET name= #{name}, age = #{age} WHERE id = #{id}")
+    void updateMember(int id, String name, int age);
 
     @Delete("DELETE FROM members WHERE id = #{id}")
     void deleteMemberById(int id);

@@ -38,9 +38,9 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public Member updateMember(int id, String name) {
+    public Member updateMember(int id, String name, int age) {
         Member memberUpdate = memberMapper.findById(id).orElseThrow(() -> new ResourceNotFoundException("member not found"));
-        memberMapper.updateMemberById(id, name);
+        memberMapper.updateMember(id, name, age);
         return memberUpdate;
     }
 

@@ -51,7 +51,7 @@ public class MemberController {
 
     @PatchMapping("members/{id}")
     public ResponseEntity<Map<String, String>> update(@PathVariable("id") int id, @RequestBody @Validated MemberForm form) {
-        memberService.updateMember(id, form.getName());
+        memberService.updateMember(id, form.getName(), form.getAge());
         return ResponseEntity.ok(Map.of("message", "successflly updated"));
     }
 
