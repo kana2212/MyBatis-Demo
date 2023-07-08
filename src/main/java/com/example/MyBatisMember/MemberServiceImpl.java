@@ -36,4 +36,18 @@ public class MemberServiceImpl implements MemberService {
     public void createMember(MemberForm form) {
         memberMapper.createMember(form);
     }
+
+    @Override
+    public Member updateMember(int id, String name) {
+        Member memberUpdate = memberMapper.findById(id).orElseThrow(() -> new ResourceNotFoundException("member not found"));
+        memberMapper.updateMemberById(id, name);
+        return memberUpdate;
+    }
+
+    @Override
+    public Member deleteMember(int id) {
+        Member deleteMember = memberMapper.findById(id).orElseThrow(() -> new ResourceNotFoundException("member not found"));
+        memberMapper.deleteMemberById(id);
+        return deleteMember;
+    }
 }

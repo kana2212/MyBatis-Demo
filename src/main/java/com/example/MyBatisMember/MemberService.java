@@ -12,4 +12,9 @@ public interface MemberService {
     Member findById(int id);
 
     void createMember(MemberForm form);
+
+    Member updateMember(int id, String name);
+
+    Member deleteMember(int id);
+
 }

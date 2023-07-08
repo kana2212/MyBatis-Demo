@@ -1,4 +1,4 @@
-CREATE TABLE members;
+DROP TABLE IF EXISTS members;
 
 CREATE TABLE members (
  id int unsigned AUTO_INCREMENT,
